@@ -2,7 +2,6 @@
 
 //
 // 仕入管理リスト
-//
 function fnSqlStockList($flg, $param)
 {
     switch ($flg) {
