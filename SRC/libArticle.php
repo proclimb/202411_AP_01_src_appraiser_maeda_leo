@@ -19,7 +19,7 @@ function subArticle()
 	$orderTo = $_REQUEST['orderTo'];
 	$sPage   = $_REQUEST['sPage'];
 
-	if ($sDel = '') {
+	if ($sDel == '') {
 		$sDel = 1;
 	}
 
@@ -64,7 +64,7 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>部屋番号</th>
-					<td><input type="text" name="sRoom" value="" size="30" /><?php print $sArticle ?></td>
+					<td><input type="text" name="sRoom" value="<?php print $sRoom ?>" size="30" /></td>
 					<th>3Dパース</th>
 					<td><input type="text" name="sDrawing" value="<?php print $sDrawing ?>" size="30" /></td>
 				</tr>
@@ -86,8 +86,8 @@ function subArticle()
 		return;
 	}
 	$sql = fnSqlArticleList(0, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleNote, $sKeyBox, $sDrawing, $sSellCharge, $sPage, $orderBy, $orderTo);
-	$res = mysql_query($sql);
-	$row = mysql_fetch_array($res);
+	$res = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_array($res);
 
 	$count = $row[0];
 
@@ -260,7 +260,7 @@ function subArticleEdit()
 		</table>
 
 		<a href="javascript:fnArticleEditCheck();"><img src="./images/<?php print $btnImage ?>" /></a>　
-		<a href="javascript:form.act.value='articleSearch';form.submit();"><img src="./images/btn_return.png" /></a>
+		<a href="javascript:form.act.value='fManager';form.submit();"><img src="./images/btn_return.png" /></a>
 		&nbsp;&nbsp;<a href="javascript:fnArticleDeleteCheck(<?php print $articleNo ?>);"><img src="./images/btn_del.png" /></a>
 	</form>
 <?php
