@@ -16,8 +16,10 @@ function fnArticleEditCheck() {
 	if (isLength(100, "3Dパース", form.drawing)) { return; }
 	if (isLength(100, "営業担当者", form.sellCharge)) { return; }
 
-	form.act.value = 'articleEditComplete';
-	form.submit();
+	if (confirm('この内容で登録します。よろしいですか？')) {
+		form.act.value = 'articleEditComplete';
+		form.submit();
+	}
 }
 
 
