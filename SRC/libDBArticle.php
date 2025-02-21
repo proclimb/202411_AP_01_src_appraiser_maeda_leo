@@ -43,9 +43,14 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 		$sql .= " AND SELLCHARGE LIKE '%$sSellCharge%'";
 	}
 
+	if ($orderBy) {
+		$sql .= " ORDER BY $orderBy $orderTo";
+	}
+	if ($flg) {
+		$sql .= " LIMIT " . (($sPage - 1) * PAGE_MAX) . ", " . PAGE_MAX;
+	}
 	return ($sql);
 }
-
 
 
 //
