@@ -63,7 +63,7 @@ function subFManager()
 					</td>
 				</tr>
 				<tr>
-					<th>物件名</th>
+					<th>物件名<span class="red">（必須）</span></th>
 					<td><input type="text" name="sName" value="<?php print $sName; ?>" size="50" /></td>
 				</tr>
 				<tr>
@@ -198,7 +198,7 @@ function subFManagerEdit()
 					</td>
 				</tr>
 				<tr>
-					<th>物件名</th>
+					<th>物件名<span class="red">（必須）</span></th>
 					<td><input type="text" name="name" value="<?php print $name; ?>" /></td>
 				</tr>
 				<tr>
@@ -341,7 +341,7 @@ function subFManagerView()
 				<table border="0" cellpadding="5" cellspacing="1">
 					<tr>
 						<th>登録日</th>
-						<th>物件名</th>
+						<th>物件名<span class="red">（必須）</span></th>
 						<th>部屋</th>
 						<th>備考</th>
 					</tr>
